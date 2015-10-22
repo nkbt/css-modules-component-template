@@ -14,8 +14,5 @@ pids
 /node_modules/
 
 /lib/
-/example/
-/.coveralls.yml
-/reports/
 
 /.eslintcache

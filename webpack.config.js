@@ -2,7 +2,7 @@
 
 
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 
 
@@ -13,23 +13,34 @@ require('babel/polyfill');
 
 module.exports = {
   devtool: 'source-map',
-  entry: './src/example/Example.js',
-  output: {filename: 'bundle.js', path: path.resolve('example')},
+  entry: './src/index.js',
+  output: {
+    filename: 'Component.js',
+    path: path.resolve('lib'),
+    library: 'Component',
+    libraryTarget: 'commonjs2',
+    sourcePrefix: ''
+  },
+  target: 'node',
   plugins: [
-    new HtmlWebpackPlugin(),
+    new ExtractTextPlugin('Component.css'),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
       }
     })
   ],
-
   module: {
     loaders: [
-      {test: /\.css$/, loaders: ['style', 'css?modules']},
+      {test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css?modules')},
       {test: /\.js$/, loader: 'babel', include: [path.resolve('src')]}
     ]
   },
   resolve: {extensions: ['', '.js']},
-  stats: {colors: true}
+  stats: {colors: true},
+  externals: {
+    react: {
+      commonjs2: 'react'
+    }
+  }
 };
