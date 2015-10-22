@@ -65,3 +65,9 @@ const App = React.createClass({
   // ...
 });
 ```
+
+## Rendered lib Component
+
+With original css-modules class and app-specific override
+
+![styled component](styled-component.png)
