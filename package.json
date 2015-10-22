@@ -1,6 +1,6 @@
 {
   "name": "css-modules-component-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Styled UI component template with CSS-Modules",
   "main": "lib/Component.js",
   "scripts": {
