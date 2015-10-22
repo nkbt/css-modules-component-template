@@ -14,7 +14,7 @@ var webpackConfig = {
     extensions: ['', '.js']
   },
   module: {
-    loaders: withCoverage ?
+    loaders: (withCoverage ?
       [
         {test: /\.js$/, loader: 'babel', include: [path.resolve('test')]},
         {test: /\.js$/, loader: 'isparta', include: [path.resolve('src')]}
@@ -23,7 +23,10 @@ var webpackConfig = {
         {
           test: /\.js$/, loader: 'babel', include: [path.resolve('src'), path.resolve('test')]
         }
-      ]
+      ]).concat(
+      [
+        {test: /\.css$/, loader: 'null'}
+      ])
   },
   stats: {
     colors: true

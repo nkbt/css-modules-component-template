@@ -1,0 +1,7 @@
+.component {
+  margin: 50px auto;
+  padding: 20px;
+  width: 400px;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  border-radius: 10px;
+}
