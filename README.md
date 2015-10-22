@@ -15,9 +15,7 @@ Styled UI component template with CSS-Modules
 npm install --save css-modules-component-template
 ```
 
-
-### Example app
-
+## Example app
 
 ```js
 import Component from 'css-modules-component-template';
@@ -65,6 +63,16 @@ const App = React.createClass({
   // ...
 });
 ```
+
+## Demo app
+
+Github:
+
+[https://github.com/nkbt/css-modules-component-template-test](https://github.com/nkbt/css-modules-component-template-test)
+
+Published to Github Pages pre-built example:
+
+[http://nkbt.github.io/css-modules-component-template-test] (http://nkbt.github.io/css-modules-component-template-test)
 
 ## Rendered lib Component
 
